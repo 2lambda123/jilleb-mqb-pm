@@ -53,6 +53,7 @@ import com.jjoe64.graphview.GridLabelRenderer;
 import com.jjoe64.graphview.Viewport;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import java.security.SecureRandom;
 
 import org.jetbrains.annotations.NotNull;
 import org.prowl.torque.remote.ITorqueService;
@@ -267,7 +268,7 @@ public class DashboardFragment extends CarFragment {
 
     // random, for use in Test value
     private static float randFloat(float min, float max) {
-        Random rand = new Random();
+        Random rand = new SecureRandom();
         return rand.nextFloat() * (max - min) + min;
     }
 
