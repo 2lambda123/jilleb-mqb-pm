@@ -8,33 +8,42 @@
         android:layout="@layout/prefcat">
 
 
-        <com.austingreco.imagelistpreference.ImageListPreference
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:entries="@array/Themes"
             android:entryValues="@array/Themes"
             android:key="selectedTheme"
             android:summary="%s"
             android:title="@string/pref_theme"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/ThemesThumbs"
-            app:ilp_tint="#00FFFFFF" />
-        <com.austingreco.imagelistpreference.ImageListPreference
+            app:entryImages="@array/ThemesThumbs"
+            app:roundedImage="false"
+             />
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:entries="@array/fontEntries"
             android:entryValues="@array/fontValues"
-            android:key="selectedFont"
+            android:key="selectedFont1"
             android:summary="%s"
             android:title="@string/pref_font"
-            app:ilp_backgroundTint="@color/white"
-            app:ilp_entryImages="@array/FontThumbs"
-            app:ilp_tint="#00FFFFFF" />
-        <com.austingreco.imagelistpreference.ImageListPreference
+            app:entryImages="@array/FontThumbs"
+            app:roundedImage="false"
+             />
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
+            android:entries="@array/fontEntries"
+            android:entryValues="@array/fontValues"
+            android:key="selectedFont2"
+            android:summary="%s"
+            android:title="@string/pref_font_titles"
+            app:entryImages="@array/FontThumbs"
+            app:roundedImage="false"
+             />
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:entries="@array/backgroundstrings"
             android:entryValues="@array/backgrounds"
             android:key="selectedBackground"
             android:summary="%s"
             android:title="@string/pref_background"
-            app:ilp_backgroundTint="@color/white"
-            app:ilp_entryImages="@array/thumbs_backgrounds"
-            app:ilp_tint="#00FFFFFF" />
+            app:entryImages="@array/thumbs_backgrounds"
+            app:roundedImage="false"
+             />
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="highVisActive"
@@ -106,7 +115,7 @@
             android:icon="@drawable/ic_settings_title"
             android:inputType="text" />
 
-        <com.austingreco.imagelistpreference.ImageListPreference
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/ClockDataElementsEntries"
@@ -115,11 +124,12 @@
             android:key="selectedClockLeft1"
             android:summary="%s"
             android:title="@string/pref_leftclock"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/ClockDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
 
-        <com.austingreco.imagelistpreference.ImageListPreference
+            app:entryImages="@array/ClockDataElementsIcons"
+            app:roundedImage="false"
+             />
+
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/ClockDataElementsEntries"
@@ -128,12 +138,13 @@
             android:key="selectedClockCenter1"
             android:summary="%s"
             android:title="@string/pref_centerclock"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/ClockDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
+
+            app:entryImages="@array/ClockDataElementsIcons"
+            app:roundedImage="false"
+             />
 
 
-        <com.austingreco.imagelistpreference.ImageListPreference
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/ClockDataElementsEntries"
@@ -142,11 +153,12 @@
             android:key="selectedClockRight1"
             android:summary="%s"
             android:title="@string/pref_rightclock"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/ClockDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
 
-        <com.austingreco.imagelistpreference.ImageListPreference
+            app:entryImages="@array/ClockDataElementsIcons"
+            app:roundedImage="false"
+             />
+
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:defaultValue="1"
             android:entries="@array/TextDataElementsEntries"
             android:entryValues="@array/TextDataElementsValues"
@@ -154,10 +166,12 @@
             android:key="selectedView1_1"
             android:summary="%s"
             android:title="@string/pref_view1"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/TextDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
-        <com.austingreco.imagelistpreference.ImageListPreference
+
+            app:entryImages="@array/TextDataElementsIcons"
+            app:roundedImage="false"
+             />
+
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:defaultValue="1"
@@ -167,10 +181,11 @@
             android:key="selectedView2_1"
             android:summary="%s"
             android:title="@string/pref_view2"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/TextDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
-        <com.austingreco.imagelistpreference.ImageListPreference
+
+            app:entryImages="@array/TextDataElementsIcons"
+            app:roundedImage="false"
+             />
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:defaultValue="1"
@@ -180,10 +195,11 @@
             android:key="selectedView3_1"
             android:summary="%s"
             android:title="@string/pref_view3"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/TextDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
-        <com.austingreco.imagelistpreference.ImageListPreference
+
+            app:entryImages="@array/TextDataElementsIcons"
+            app:roundedImage="false"
+             />
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:defaultValue="1"
@@ -193,9 +209,10 @@
             android:key="selectedView4_1"
             android:summary="%s"
             android:title="@string/pref_view4"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/TextDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
+
+            app:entryImages="@array/TextDataElementsIcons"
+            app:roundedImage="false"
+             />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -216,7 +233,7 @@
             android:dependency="d2_active"
             android:inputType="text" />
 
-        <com.austingreco.imagelistpreference.ImageListPreference
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/ClockDataElementsEntries"
@@ -226,11 +243,12 @@
             android:summary="%s"
             android:title="@string/pref_leftclock"
             android:dependency="d2_active"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/ClockDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
 
-        <com.austingreco.imagelistpreference.ImageListPreference
+            app:entryImages="@array/ClockDataElementsIcons"
+            app:roundedImage="false"
+             />
+
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/ClockDataElementsEntries"
@@ -240,12 +258,13 @@
             android:summary="%s"
             android:title="@string/pref_centerclock"
             android:dependency="d2_active"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/ClockDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
+
+            app:entryImages="@array/ClockDataElementsIcons"
+            app:roundedImage="false"
+             />
 
 
-        <com.austingreco.imagelistpreference.ImageListPreference
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/ClockDataElementsEntries"
@@ -255,10 +274,11 @@
             android:summary="%s"
             android:title="@string/pref_rightclock"
             android:dependency="d2_active"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/ClockDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
-        <com.austingreco.imagelistpreference.ImageListPreference
+
+            app:entryImages="@array/ClockDataElementsIcons"
+            app:roundedImage="false"
+             />
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:defaultValue="1"
             android:entries="@array/TextDataElementsEntries"
             android:entryValues="@array/TextDataElementsValues"
@@ -267,10 +287,11 @@
             android:summary="%s"
             android:title="@string/pref_view1"
             android:dependency="d2_active"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/TextDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
-        <com.austingreco.imagelistpreference.ImageListPreference
+
+            app:entryImages="@array/TextDataElementsIcons"
+            app:roundedImage="false"
+             />
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:defaultValue="1"
@@ -281,10 +302,11 @@
             android:summary="%s"
             android:title="@string/pref_view2"
             android:dependency="d2_active"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/TextDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
-        <com.austingreco.imagelistpreference.ImageListPreference
+
+            app:entryImages="@array/TextDataElementsIcons"
+            app:roundedImage="false"
+             />
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:defaultValue="1"
@@ -295,10 +317,11 @@
             android:summary="%s"
             android:title="@string/pref_view3"
             android:dependency="d2_active"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/TextDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
-        <com.austingreco.imagelistpreference.ImageListPreference
+
+            app:entryImages="@array/TextDataElementsIcons"
+            app:roundedImage="false"
+             />
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:defaultValue="1"
@@ -309,9 +332,10 @@
             android:summary="%s"
             android:title="@string/pref_view4"
             android:dependency="d2_active"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/TextDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
+
+            app:entryImages="@array/TextDataElementsIcons"
+            app:roundedImage="false"
+             />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -332,7 +356,7 @@
             android:dependency="d3_active"
             android:inputType="text" />
 
-        <com.austingreco.imagelistpreference.ImageListPreference
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/ClockDataElementsEntries"
@@ -342,11 +366,12 @@
             android:summary="%s"
             android:dependency="d3_active"
             android:title="@string/pref_leftclock"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/ClockDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
 
-        <com.austingreco.imagelistpreference.ImageListPreference
+            app:entryImages="@array/ClockDataElementsIcons"
+            app:roundedImage="false"
+             />
+
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/ClockDataElementsEntries"
@@ -356,12 +381,13 @@
             android:summary="%s"
             android:title="@string/pref_centerclock"
             android:dependency="d3_active"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/ClockDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
+
+            app:entryImages="@array/ClockDataElementsIcons"
+            app:roundedImage="false"
+             />
 
 
-        <com.austingreco.imagelistpreference.ImageListPreference
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/ClockDataElementsEntries"
@@ -371,12 +397,13 @@
             android:summary="%s"
             android:title="@string/pref_rightclock"
             android:dependency="d3_active"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/ClockDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
+
+            app:entryImages="@array/ClockDataElementsIcons"
+            app:roundedImage="false"
+             />
 
 
-        <com.austingreco.imagelistpreference.ImageListPreference
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:defaultValue="1"
             android:entries="@array/TextDataElementsEntries"
             android:entryValues="@array/TextDataElementsValues"
@@ -385,10 +412,11 @@
             android:summary="%s"
             android:title="@string/pref_view1"
             android:dependency="d3_active"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/TextDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
-        <com.austingreco.imagelistpreference.ImageListPreference
+
+            app:entryImages="@array/TextDataElementsIcons"
+            app:roundedImage="false"
+             />
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:defaultValue="1"
@@ -399,10 +427,11 @@
             android:summary="%s"
             android:title="@string/pref_view2"
             android:dependency="d3_active"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/TextDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
-        <com.austingreco.imagelistpreference.ImageListPreference
+
+            app:entryImages="@array/TextDataElementsIcons"
+            app:roundedImage="false"
+             />
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:defaultValue="1"
@@ -413,10 +442,11 @@
             android:summary="%s"
             android:title="@string/pref_view3"
             android:dependency="d3_active"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/TextDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
-        <com.austingreco.imagelistpreference.ImageListPreference
+
+            app:entryImages="@array/TextDataElementsIcons"
+            app:roundedImage="false"
+             />
+        <tk.arnabjportfolio.preference.imagelist.ImageListPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:defaultValue="1"
@@ -427,34 +457,10 @@
             android:summary="%s"
             android:title="@string/pref_view4"
             android:dependency="d3_active"
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/TextDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
-    </PreferenceCategory>
 
-    <PreferenceCategory
-        android:singleLineTitle="false"
-        android:title="@string/pref_dataelementsettings_4"
-        android:layout="@layout/prefcat">
-
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="d4_active"
-        android:title="@string/pref_enable_4nd_dash" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:singleLineTitle="false"
-        android:title="@string/pref_dataelementsettings_5"
-        android:layout="@layout/prefcat">
-
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="d5_active"
-            android:title="@string/pref_enable_5nd_dash" />
-            app:ilp_backgroundTint="@android:color/transparent"
-            app:ilp_entryImages="@array/TextDataElementsIcons"
-            app:ilp_tint="#00FFFFFF" />
+            app:entryImages="@array/TextDataElementsIcons"
+            app:roundedImage="false"
+             />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -553,11 +559,11 @@
             android:summary="@string/pref_wheel_state_monitoring_summary"
             android:title="@string/pref_wheel_state_monitoring_title" />
     </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/pref_enginespeed_category_title"
-        android:layout="@layout/prefcat">
-        <!-- TODO: Localize and add summaries -->
+    <!--
+        <PreferenceCategory
+            android:layout="@layout/prefcat"
+            android:shouldDisableView="true"
+            android:title="@string/pref_enginespeed_category_title">
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="engineSpeedMonitoringActive"
@@ -569,7 +575,7 @@
             android:dialogTitle="@string/pref_enginespeed_rpm_dialog_title"
             android:inputType="number"
             android:key="engineSpeedESInform"
-            android:title="@string/pref_enginespeed_rpm_inform"/>
+            android:title="@string/pref_enginespeed_rpm_inform" />
         <EditTextPreference
             android:defaultValue="5900"
             android:dependency="engineSpeedMonitoringActive"
@@ -589,8 +595,8 @@
             android:defaultValue="true"
             android:dependency="engineSpeedMonitoringActive"
             android:key="engineSpeedSoundActive"
-            android:title="@string/pref_enginespeed_play_sound"
-            android:summary="@string/pref_enginespeed_play_sound_summary"/>
+            android:summary="@string/pref_enginespeed_play_sound_summary"
+            android:title="@string/pref_enginespeed_play_sound" />
 
         <EditTextPreference
             android:defaultValue="4"
@@ -600,7 +606,7 @@
             android:key="engineSpeedSoundUpToGear"
             android:title="@string/pref_enginespeed_play_sound_upto" />
     </PreferenceCategory>
-
+    -->
     <PreferenceCategory
         android:title="@string/pref_providers_category_title"
         android:layout="@layout/prefcat">
@@ -656,6 +662,15 @@
             android:dependency="uploadToBigquery"
             android:title="@string/pref_cancel_uploads_title" />
 
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Test features">
+
+        <EditTextPreference
+            android:defaultValue="false"
+            android:key="customPID"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Custom Torque PID" />
     </PreferenceCategory>
 
 </PreferenceScreen>

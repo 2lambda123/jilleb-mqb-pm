@@ -13,7 +13,7 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
@@ -32,7 +32,7 @@ public class SettingsFragment extends PreferenceFragment {
     private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
         @Override
         public boolean onPreferenceChange(Preference preference, Object value) {
-            Log.d(TAG, "Pereference change: " + preference.getKey());
+            Log.d(TAG, "Preference change: " + preference.getKey());
 
             String stringValue = value == null ? "" : value.toString();
 
@@ -225,11 +225,12 @@ public class SettingsFragment extends PreferenceFragment {
         bindPreferenceSummaryToValue(findPreference("performanceTitle1"));
         bindPreferenceSummaryToValue(findPreference("performanceTitle2"));
         bindPreferenceSummaryToValue(findPreference("performanceTitle3"));
+        /*
         bindPreferenceSummaryToValue(findPreference("engineSpeedSoundUpToGear"));
         bindPreferenceSummaryToValue(findPreference("engineSpeedESInform"));
         bindPreferenceSummaryToValue(findPreference("engineSpeedESHint"));
         bindPreferenceSummaryToValue(findPreference("engineSpeedESWarn"));
-
+        */
         Preference statsLoggerPref = findPreference(CarStatsLogger.PREF_ENABLED);
         try {
             statsLoggerPref.setSummary(

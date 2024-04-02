@@ -1,21 +1,17 @@
 package com.mqbcoding.stats;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
-import android.util.Log;
 import android.view.View;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.google.android.apps.auto.sdk.CarActivity;
-import com.google.android.apps.auto.sdk.CarUiController;
-import com.google.android.apps.auto.sdk.DayNightStyle;
 import com.google.android.apps.auto.sdk.MenuController;
 import com.google.android.apps.auto.sdk.MenuItem;
 import com.google.android.apps.auto.sdk.StatusBarController;
@@ -24,7 +20,6 @@ import static android.view.View.SYSTEM_UI_FLAG_FULLSCREEN;
 import static android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
 import static android.view.View.SYSTEM_UI_FLAG_IMMERSIVE;
 import static android.view.View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-import static android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
 
 public class MainCarActivity extends CarActivity {
     private static final String TAG = "MainCarActivity";
@@ -32,8 +27,6 @@ public class MainCarActivity extends CarActivity {
     //menu stuff//
 
     static final String MENU_DASHBOARD = "dashboard";
-  //  static final String MENU_CARINFO = "carinfo";
-    static final String MENU_READINGS = "readings";
     static final String MENU_CREDITS = "credits";
     static final String MENU_STOPWATCH = "stopwatch";
 
@@ -41,7 +34,6 @@ public class MainCarActivity extends CarActivity {
     // static final String MENU_DEBUG_LOG = "log";
     // static final String MENU_DEBUG_TEST_NOTIFICATION = "test_notification";
     private static final String FRAGMENT_CAR = "dashboard";
-    private static final String FRAGMENT_READINGS = "readings";
     private static final String FRAGMENT_CREDITS = "credits";
     private static final String FRAGMENT_STOPWATCH = "stopwatch";
     private static final String CURRENT_FRAGMENT_KEY = "app_current_fragment";
@@ -57,9 +49,6 @@ public class MainCarActivity extends CarActivity {
             switch (name) {
                 case MENU_DASHBOARD:
                     switchToFragment(FRAGMENT_CAR);
-                    break;
-                case MENU_READINGS:
-                    switchToFragment(FRAGMENT_READINGS);
                     break;
                 case MENU_STOPWATCH:
                     switchToFragment(FRAGMENT_STOPWATCH);
@@ -87,8 +76,8 @@ public class MainCarActivity extends CarActivity {
             updateStatusBarTitle();
         }
     };
-    private Handler mHandler = new Handler();
-    private SharedPreferences.OnSharedPreferenceChangeListener preferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+    private final Handler mHandler = new Handler();
+    private final SharedPreferences.OnSharedPreferenceChangeListener preferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
             preferenceChangeHandler();
@@ -155,15 +144,12 @@ public class MainCarActivity extends CarActivity {
 
         //set fragments:
         CarFragment carfragment = new DashboardFragment();
-        ReadingsViewFragment readingsViewFragment = new ReadingsViewFragment();
 
         StopwatchFragment stopwatchfragment = new StopwatchFragment();
         CreditsFragment creditsfragment = new CreditsFragment();
         fragmentManager.beginTransaction()
                 .add(R.id.fragment_container, carfragment, FRAGMENT_CAR)
                 .detach(carfragment)
-                .add(R.id.fragment_container, readingsViewFragment, FRAGMENT_READINGS)
-                .detach(readingsViewFragment)
                 .add(R.id.fragment_container, stopwatchfragment, FRAGMENT_STOPWATCH)
                 .detach(stopwatchfragment)
                 .add(R.id.fragment_container, creditsfragment, FRAGMENT_CREDITS)
@@ -193,11 +179,6 @@ public class MainCarActivity extends CarActivity {
     //set menu
         mainMenu.addMenuItem(MENU_DASHBOARD, new MenuItem.Builder()
                 .setTitle(getString(R.string.activity_main_title))
-                .setType(MenuItem.Type.ITEM)
-                .build());
-
-        mainMenu.addMenuItem(MENU_READINGS, new MenuItem.Builder()
-                .setTitle(getString(R.string.activity_readings_title))
                 .setType(MenuItem.Type.ITEM)
                 .build());
 
@@ -237,7 +218,7 @@ public class MainCarActivity extends CarActivity {
         switchToFragment(mCurrentFragmentTag);
     }
 
-    private void setLocalTheme(String theme) {
+    public void setLocalTheme(String theme) {
 
         switch (theme) {
             case "VW GTI":
@@ -302,6 +283,9 @@ public class MainCarActivity extends CarActivity {
                 break;
             case "BMW":
                 setTheme(R.style.AppTheme_BMW);
+                break;
+            case "Sport":
+                setTheme(R.style.AppTheme_Sport);
                 break;
 
             default:
