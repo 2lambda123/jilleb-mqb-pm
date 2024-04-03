@@ -939,7 +939,9 @@ public class DashboardFragment extends CarFragment {
         //        sb.append("("+tmp+")");
             tmp = result.getUrl();  //URL -> Altitude
             if (tmp != null)
-            sb.append("(").append(tmp).append(")");
+            {
+                sb.append("(").append(tmp).append(")");
+            }
 
             googleGeocodeLocationStr = sb.toString();
         }
