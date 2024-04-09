@@ -36,6 +36,7 @@ import com.google.common.io.Files;
 import com.google.common.net.MediaType;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import io.github.pixee.security.BoundedLineReader;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -199,7 +200,7 @@ public class LogUploadService extends JobService {
                             try (GZIPOutputStream gzipOutputStream = new GZIPOutputStream(fileOutputStream)) {
                                 try (final Writer writer = new OutputStreamWriter(gzipOutputStream)) {
                                     String line;
-                                    while ((line = reader.readLine()) != null) {
+                                    while ((line = BoundedLineReader.readLine(reader, 5_000_000)) != null) {
                                         int endOfRecord;
                                         while ((endOfRecord = line.indexOf('}')) != -1) {
                                             writer.write(line.substring(0, endOfRecord + 1));
