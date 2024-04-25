@@ -1152,8 +1152,8 @@ public class DashboardFragment extends CarFragment {
         } else {
             mGetMeasurement = (Float) mLastMeasurements.get(mMeasurements);
             if (mGetMeasurement == null) mGetMeasurement = (float) 0;
-            if (mMeasurements.equals("tankLevelPrimary")) mGetMeasurement = mGetMeasurement * fueltanksize;
-            if (mMeasurements.equals("driving distance")) {
+            if ("tankLevelPrimary".equals(mMeasurements)) mGetMeasurement = mGetMeasurement * fueltanksize;
+            if ("driving distance".equals(mMeasurements)) {
                 mGetMeasurement = (Float) mLastMeasurements.get("tankLevelPrimary");
                 if (mGetMeasurement==null) mGetMeasurement= (float) 0;
                 mGetMeasurement = mGetMeasurement * fueltanksize;
@@ -1179,7 +1179,7 @@ public class DashboardFragment extends CarFragment {
                 }
             }
 
-            if (mFormat.equals("FORMAT_SHORTTIME")) {
+            if ("FORMAT_SHORTTIME".equals(mFormat)) {
                 mValueElement.setText(ConvertMinutesTime(mGetMeasurement.intValue()) + " " + mGetUnit);
             } else {
                 mValueElement.setText(String.format(mFormat, mGetMeasurement) + " " + mGetUnit);
@@ -1318,7 +1318,7 @@ public class DashboardFragment extends CarFragment {
 
         // set items to have a "-" as value.
         //todo: clean this up. This can be done much nicer.
-        if (queryElement.equals("none")) {
+        if ("none".equals(queryElement)) {
             label.setText("");
             value.setText("");
             icon = "empty";
@@ -1694,7 +1694,7 @@ public class DashboardFragment extends CarFragment {
             queryTrim = "other";
         }
         // get min/max values and unit from torque
-        if (queryTrim.equals("torque")) {
+        if ("torque".equals(queryTrim)) {
             queryClock = queryClock.substring(queryClock.lastIndexOf('_') + 1);
             queryClock = queryClock.substring(2);
             long queryPid = new BigInteger(queryClock, 16).longValue();
@@ -2179,7 +2179,7 @@ public class DashboardFragment extends CarFragment {
                         clock.setUnit(unitText); // use the units Torque is providing
                         break;
                     case "torque-turboboost_0xff1202":
-                        if (unitText.equals("psi") && pressureUnit.equals("bar")) {
+                        if (unitText.equals("psi") && "bar".equals(pressureUnit)) {
                             clockValue = clockValue / 14.5037738f;
                             unitText = "bar";
                         }
@@ -2196,7 +2196,7 @@ public class DashboardFragment extends CarFragment {
                     case "torque-exhaustgastempbank1sensor2_0xff1282":
                     case "torque-exhaustgastempbank1sensor3_0xff1283":
                     case "torque-exhaustgastempbank1sensor4_0xff1284":
-                        if (unitText.equals("°C") && temperatureUnit.equals("°C")) {
+                        if (unitText.equals("°C") && "°C".equals(temperatureUnit)) {
                             unitText = "°C";
                         } else {
                             unitText = "°F";
@@ -2361,7 +2361,7 @@ public class DashboardFragment extends CarFragment {
         // Display location in left side of Title  bar
         if (showStreetName) {
             String leftTitle="";
-            if (sourceLocation.equals("Geocoding")) {
+            if ("Geocoding".equals(sourceLocation)) {
                 leftTitle = googleGeocodeLocationStr;
             } else {
                 if (googleMapsLocationStr != null && !googleMapsLocationStr.isEmpty()) {
@@ -2616,7 +2616,7 @@ public class DashboardFragment extends CarFragment {
 
                             String unitText = torqueService.getUnitForPid(queryPid);
                             // workaround for Torque displaying the unit for turbo pressure
-                            if (unitText.equals("psi") && pressureUnit.equals("bar")) {
+                            if (unitText.equals("psi") && "bar".equals(pressureUnit)) {
                                 torqueData3 = torqueData3 / 14.5037738f;
                                 unitText = "bar";
                             }
@@ -2719,7 +2719,7 @@ public class DashboardFragment extends CarFragment {
                     } else if (reverseGear != null && reverseGear) {
                         value.setTextColor(Color.WHITE);
                         gearText = "R";
-                    } else if (currentGear == null || currentGear.equals("0")) {
+                    } else if (currentGear == null || "0".equals(currentGear)) {
                         value.setTextColor(Color.WHITE);
                         gearText = "-";
                     } else if (currentGear != null && recommendedGear != null) {
@@ -2882,7 +2882,7 @@ public class DashboardFragment extends CarFragment {
 
 
         //dynamically scale the icon_space in case there's only an icon, and no text
-        if (!iconText.equals("") && resId == resIdEmpty) {
+        if (!"".equals(iconText) && resId == resIdEmpty) {
             ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) icon.getLayoutParams();
             params.width = 40;
             icon.setLayoutParams(params);
